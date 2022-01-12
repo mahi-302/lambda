@@ -1,8 +1,8 @@
 provider "aws"{
   region="us-east-2"
 }
-resource "aws_iam_role" "Iam_demo" {
-  name = "lam_demo"
+resource "aws_iam_role" "lamda_my1" {
+  name = "lamda_my1"
 
   assume_role_policy = <<EOF
 {
@@ -24,7 +24,7 @@ EOF
 resource "aws_lambda_function" "testlambda" {
   filename      = "lammbda1.zip"
   function_name = "lambda_function_testlambda"
-  role          = aws_iam_role.Iam_demo.arn
+  role          = aws_iam_role.lamda_my1.arn
   handler       = "index.test"
  source_code_hash = filebase64sha256("lammbda1.zip")
 runtime = "python3.9"
