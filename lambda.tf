@@ -1,8 +1,8 @@
 provider "aws"{
   region="us-east-2"
 }
-resource "aws_iam_role" "iam_for_lambda1" {
-  name = "iam_for_lambda1"
+resource "aws_iam_role" "iam_for_lambda" {
+  name = "iam_for_lambda"
 
   assume_role_policy = <<EOF
 {
@@ -21,7 +21,7 @@ resource "aws_iam_role" "iam_for_lambda1" {
 EOF
 }
 
-resource "aws_lambda_function" "test1_lambda" {
+resource "aws_lambda_function" "test_lambda" {
   filename      = "lammbda1.zip"
   function_name = "lambda_function_name"
   role          = aws_iam_role.iam_for_lambda.arn
