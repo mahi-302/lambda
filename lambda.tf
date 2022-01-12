@@ -24,7 +24,7 @@ EOF
 resource "aws_lambda_function" "testlambda" {
   filename      = "lammbda1.zip"
   function_name = "lambda_function_testlambda"
-  role          = aws_iam_role.iam_for_lambda.arn
+  role          = aws_iam_role.Iam_demo.arn
   handler       = "index.test"
  source_code_hash = filebase64sha256("lammbda1.zip")
 runtime = "python3.9"
