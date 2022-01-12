@@ -1,7 +1,7 @@
 provider "aws"{
   region="us-east-2"
 }
-resource "aws_iam_role" "iam_for_lambda" {
+resource "aws_iam_role" "Iam_demo" {
   name = "lam_demo"
 
   assume_role_policy = <<EOF
