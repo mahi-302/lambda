@@ -28,3 +28,4 @@ resource "aws_lambda_function" "test1_lambda" {
   handler       = "index.test"
  source_code_hash = filebase64sha256("lammbda1.zip")
 runtime = "python3.9"
+}
